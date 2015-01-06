@@ -1,0 +1,39 @@
+.footer {
+	background-color: #3c526c;
+	color: #fff;
+	padding: 10px;
+}
+
+.footer a[href] {
+	color: #39c1ff;
+}
+
+.footer .copyright {
+	font-size: .75em;
+}
+
+.footer .jacob-photo {
+	display: block;
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	border-radius: 100%;
+	border: 1px solid #eee;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.footer .designed {
+	display: block;
+	margin-left: 60px;
+	font-size: .9em;
+	font-style: italic;
+}
+.footer .jacob-link {
+	display: inline-block;
+	font-size: .8em;
+}
+
+.footer .license {
+	font-size: .9em;
+}

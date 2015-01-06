@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="jb-grid width-m">
+<head>
+    <title>Using JBGrid</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="description" content="Instructions and examples for using the JBGrid CSS responsive grid system.">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/jbgrid-min.css">
+    <link rel="stylesheet" type="text/css" href="css/prism.css">
+    <link rel="stylesheet" type="text/css" href="css/example.css">
+</head>
+<body>
+<div class="jb-content">
+	<div class="row">
+		<div class="column xs-12 padding-xl">
+		 	<h1 class="page-title">JBGrid Documentation and Examples</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="sidebar column xs-12 m-4 padding-xl sticky-m" data-sticky-top="20">
+			<ul class="link-list">
+				<li class="item">
+					<a href="#introduction">Introduction</a>
+				</li>
+				<li class="item">
+					<a href="#basics">Grid Basics</a>
+				</li>
+				<li class="item">
+					<a href="#responsive">Responsive Design</a>
+				</li>
+				<li class="item">
+					<a href="#fancy">Fancy Stuff</a>
+				</li>
+				<li class="item">
+					<a href="#conclusion">Conclusion</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main-content column xs-12 s-12 m-8 padding-xl">
+			<section id="introduction">
+				<h1 class="section-title">Introduction</h1>
+				<p>Hello there! And welcome to the example/documentation page for the JBGrid Responsive CSS Grid System. It is built for modern browsers, which means all recent versions of Chrome, Safari, and Firefox are supported. Internet Explorer is supported from version 9 and up. There are many responsive grid systems available on the Internet. Many of them are more mature and well tested than this one. You should probably use one of those. This measly thing is the result of some guy just wanting to experiment with SASS and who simply tried to make something moderately useful out of it. There is really no reason to use this other than morbid curiosity, or possibly you just like making your life difficult by using untested tools that are unlikely to be maintained.</p>
+
+				<p>Oh you're still here. Well great! I, for one, am glad you're still interested in this contraption. Okay, so a little background information on this grid system. JBGrid is a twelve column responsive grid system. It has 5 breakpoints defined to allow for a decent amount of flexibility without making things too terribly complicated. FYI the breakpoints are defined in em units. This is done so that zooming in the browser doesn't break the responsiveness of everything. The breakpoints are defined as follows:</p>
+
+				<ul>
+					<li><span class="size-label">Extra Small</span><span class="size-class-label">&quot;<code>xs</code>&quot;:</span><span class="size-description">0em - 20em</span></li>
+					<li><span class="size-label">Small</span><span class="size-class-label">&quot;<code>s</code>&quot;:</span><span class="size-description">20em - 35em</span></li>
+					<li><span class="size-label">Medium</span><span class="size-class-label">&quot;<code>m</code>&quot;:</span><span class="size-description">35em - 60em</span></li>
+					<li><span class="size-label">Large</span><span class="size-class-label">&quot;<code>l</code>&quot;:</span><span class="size-description">60em - 80em</span></li>
+					<li><span class="size-label">Extra Large</span><span class="size-class-label">&quot;<code>xl</code>&quot;:</span><span class="size-description">Larger than 80em</span></li>
+				</ul>
+
+				<p>Now that we have a little background information, let's dive into the grid system itself to see how it works.</p>
+			</section>
+			<section id="basics">
+				<h1 class="section-title">Grid Basics</h1>
+				<p>In a nutshell, you can size your elements for each viewport by applying a class for each breakpoint you want to use along with the width that the component should take at that breakpoint. The class names used are a combination of one of the sizes defined above and the number of columns wide that the column should be.
+				Examples of some column class names would be things like "<code>xs-12</code>" (where the element would span 12 columns on extra small screens an up), "<code>m-6</code>" (where the element would span 6 columns on a medium sized screen and up, and "<code>l-4</code>" (where the element would span 4 columns on a large screen. Note that any element designated as a column must also have the "<code>column</code>" classs applied to it in order for it to receive the appropriate width.</p>
+
+				<p>The following is a very simple example of using the JBGrid system. Note, that padding, colors, and borders are added for clarity and are not included as part of the grid system.</p>
+
+				<div class="example-container">
+					<span class="example-header">Example:</span>
+					<div class="example">
+						<div class="jb-grid">
+							<div class="jb-content">
+								<div class="row">
+									<div class="column xs-12 m-6 l-4">
+										Column One
+									</div>
+									<div class="column xs-12 m-6 l-8">
+										Column Two
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="example-code">
+						<span class="code-header">Code:</span>
+						<pre><code class="language-markup"><script type="prism-html-markup"><div class="jb-grid">
+	<div class="jb-content">
+		<div class="row">
+			<div class="column xs-12 m-6 l-4">Column One</div>
+			<div class="column xs-12 m-6 l-8">Column Two</div>
+		</div>
+	</div>
+</div></script></code></pre>
+					</div>
+				</div>
+
+				<p>Depending ont the size of your viewport you will either see two full-width columns stacked above each other (on a small screen), two evenly sized columns next to each other (on a medium sized screen), or a smaller column next to a larger one (on a larger screen). If you are on a device that allows you to resize your browser window, try shrinking/enlarging the browser window to see how the elements adapt to the browser's size.</p>
+
+				<h2 class="subheading">Using a Twelve Column Grid</h2>
+
+				<p>Creating layouts using a 12 column grid is very easy. We choose 12 columns because it allows us the greatest amount of flexibility in defining the widths of our column. 12 can easily be divided into 2, 3, or 4 equal sections, so we can arrange elements on the page in various symmetrical and aesthetically pleasing arrangements.</p>
+
+				<p>Below is an example of some sample layouts that our content can take using a 12 column grid. The number inside of each column, is the number of columns wide that particular element is. As you can see, the total width of any row is always 12 columns.</p>
+
+				<div class="example-container">
+					<span class="example-header">Example:</span>
+					<div class="example">
+						<div class="jb-grid">
+							<div class="jb-content">
+								<div class="row">
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+									<div class="column xs-1">1</div>
+								</div>
+								<div class="row">
+									<div class="column xs-2">2</div>
+									<div class="column xs-2">2</div>
+									<div class="column xs-2">2</div>
+									<div class="column xs-2">2</div>
+									<div class="column xs-2">2</div>
+									<div class="column xs-2">2</div>
+								</div>
+								<div class="row">
+									<div class="column xs-3">3</div>
+									<div class="column xs-3">3</div>
+									<div class="column xs-3">3</div>
+									<div class="column xs-3">3</div>
+								</div>
+								<div class="row">
+									<div class="column xs-4">4</div>
+									<div class="column xs-4">4</div>
+									<div class="column xs-4">4</div>
+								</div>
+								<div class="row">
+									<div class="column xs-6">6</div>
+									<div class="column xs-6">6</div>
+								</div>
+								<div class="row">
+									<div class="column xs-4">4</div>
+									<div class="column xs-8">8</div>
+								</div>
+								<div class="row">
+									<div class="column xs-6">6</div>
+									<div class="column xs-3">3</div>
+									<div class="column xs-3">3</div>
+								</div>
+								<div class="row">
+									<div class="column xs-2">2</div>
+									<div class="column xs-5">5</div>
+									<div class="column xs-5">5</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="example-code">
+						<span class="code-header">Code:</span>
+						<pre><code class="language-markup"><script type="prism-html-markup"><div class="jb-grid">
+	<div class="jb-content">
+		<div class="row">
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+			<div class="column xs-1">1</div>
+		</div>
+		<div class="row">
+			<div class="column xs-2">2</div>
+			<div class="column xs-2">2</div>
+			<div class="column xs-2">2</div>
+			<div class="column xs-2">2</div>
+			<div class="column xs-2">2</div>
+			<div class="column xs-2">2</div>
+		</div>
+		<div class="row">
+			<div class="column xs-3">3</div>
+			<div class="column xs-3">3</div>
+			<div class="column xs-3">3</div>
+			<div class="column xs-3">3</div>
+		</div>
+		<div class="row">
+			<div class="column xs-4">4</div>
+			<div class="column xs-4">4</div>
+			<div class="column xs-4">4</div>
+		</div>
+		<div class="row">
+			<div class="column xs-6">6</div>
+			<div class="column xs-6">6</div>
+		</div>
+		<div class="row">
+			<div class="column xs-4">4</div>
+			<div class="column xs-8">8</div>
+		</div>
+		<div class="row">
+			<div class="column xs-6">6</div>
+			<div class="column xs-3">3</div>
+			<div class="column xs-3">3</div>
+		</div>
+		<div class="row">
+			<div class="column xs-2">2</div>
+			<div class="column xs-5">5</div>
+			<div class="column xs-5">5</div>
+		</div>
+	</div>
+</div></script></code></pre>
+					</div>
+				</div>
+			</section>
+			<section id="responsive">
+				<h1 class="section-title">Responsive Design</h1>
+
+				<p>Responsive Web Design is very easy with JBGrid. Simply set classes for each breakpoint you want to use. Breakpoints are calculated using the <code>min-width</code> CSS media query function, so unless another class is specified the lowest sized breakpoint rules are always applied. So a column div with only the class &quot;<code>xs-12</code>&quot; will span 12 columns for all viewport sizes unless another breakpoint size is defined, such as &quot;<code>l-6</code>&quot;. In that case, all sizes from Extra Small to Medium will still fall under the Extra Small breakpoint rule, but viewports that are of the size Large and up will be defined using that breakpoint and will span 6 columns.</p>
+
+				<p>You can get as granular as you would like when specifying breakpoints. You can use all 5 sizes from &quot;<code>xs</code>&quot; to &quot;<code>xl</code>&quot;. Or you can just specify one width for all viewports. Note that when specifying widths, it is best practice to always include a specification for the smallest viewport size, &quot;<code>xs</code>&quot;. Due to the nature of the responsive grid system, the &quot;<code>xs</code>&quot; defined widths will always be used if no other widths are specified, but even if there are other widths specified, the Extra Small width should always be set. Note: generally, it is best practice to set a width of 12 columns for Extra Small sized viewports, to maximize the area for your content on the smallest of screen sizes.</p>
+
+				<p>One word on the sizes defined in the <a href="#introduction">Introduction</a> section. It may be helpful to know which sizes correspont to which size of device. That information is included below:</p>
+
+				<ul>
+					<li><span class="size-label">Extra Small</span><span class="size-class-label">&quot;<code>xs</code>&quot;:</span><span class="size-description">Very Small Phones and Smartwatches.</span></li>
+					<li><span class="size-label">Small</span><span class="size-class-label">&quot;<code>s</code>&quot;:</span><span class="size-description">Most Phones in Portrait.</span></li>
+					<li><span class="size-label">Medium</span><span class="size-class-label">&quot;<code>m</code>&quot;:</span><span class="size-description">Most Tablets. Large Phones in Landscape.</span></li>
+					<li><span class="size-label">Large</span><span class="size-class-label">&quot;<code>l</code>&quot;:</span><span class="size-description">Most Laptops. Large Tablets in Landscape.</span></li>
+					<li><span class="size-label">Extra Large</span><span class="size-class-label">&quot;<code>xl</code>&quot;:</span><span class="size-description">Most Large Desktop screens.</span></li>
+				</ul>
+			</section>
+			<section id="fancy">
+				<h1 class="section-title">Fancy Stuff</h1>
+
+				<p>There are a few &quot;fancy&quot; features built into the JBGrid system. Some of these features require the JavaScript helper for JBGrid. This helper can be found in the &quot;js&quot; folder with the filename <code>jbgrid.js</code> or <code>jbgrid.min.js</code>. The two files are functionally identical. The minified file should be used in production since it is of a smaller file size.</p>
+
+				<h2 class="subheading">Padding Columns</h2>
+
+				<p>The JBGrid css file has classes buit into it for adding amounts of padding to columns. Using the padding functionality does not require the JavaScript helper. The padding classes are as follows:</p>
+
+				<ul>
+					<li>&quot;<code>padding-xs</code>&quot;</li>
+					<li>&quot;<code>padding-s</code>&quot;</li>
+					<li>&quot;<code>padding-m</code>&quot;</li>
+					<li>&quot;<code>padding-l</code>&quot;</li>
+					<li>&quot;<code>padding-xl</code>&quot;</li>
+				</ul>
+
+				<p>Though they may look similiar to the breakpoint classes used for columns, their behavior is different. Notice that the size is not the first element of the class name. The above classes are used to add differeing amounts of padding to elements. The &quot;<code>padding-xs</code>&quot; class will add an &quot;Extra Small&quot; amount of padding to the element. The &quot;<code>padding-m</code>&quot; class will add a &quot;Medium&quot; amount of padding to the element. The &quot;<code>padding-xl</code>&quot; class will add an &quot;Extra Large&quot; amount of padding to the element.</p>
+
+				<p>The exact amount of padding added for each one of these classes depends on the size of the viewport. For the Extra Small padding class, the amount varies from 2px (on very small devices) to 6px (on very large screens). For the Extra Large padding class, the amount varies from 10px (on very small devices) to 14px (on very large screens). The amounts for the other classes lie somewhere in the middle. The point is, the amount of padding will grow larger depending on the viewport when using these classes.</p>
+
+				<h2 class="subheading">Matching Column Height</h2>
+
+				<p>In some cases, you may want neigboring columns to match each other's height. This can be difficult if we don't know the exact height of the largest element. JBGrid provides classes for matching the height of neighboring elements. Note that this functionality <b>requires</b> the JavaScript helper. The clases that can be used for this functionality are listed below. These classes must be applied to the &quot;row&quot; element that contains the columns to be matched.</p>
+
+				<ul>
+					<li><span class="fh-label">&quot;<code>fill-height</code>&quot;:</span><span class="size-description">Will match height in all viewports.</span></li>
+					<li><span class="fh-label">&quot;<code>fill-height-xs</code>&quot;:</span><span class="size-description">Will match height in Extra Small viewport only.</span></li>
+					<li><span class="fh-label">&quot;<code>fill-height-s</code>&quot;:</span><span class="size-description">Will match height in Small viewport only.</span></li>
+					<li><span class="fh-label">&quot;<code>fill-height-m</code>&quot;:</span><span class="size-description">Will match height in Medium viewport only.</span></li>
+					<li><span class="fh-label">&quot;<code>fill-height-l</code>&quot;:</span><span class="size-description">Will match height in Large viewport only.</span></li>
+					<li><span class="fh-label">&quot;<code>fill-height-xl</code>&quot;:</span><span class="size-description">Will match height in Extra Large viewport only.</span></li>
+				</ul>
+
+				<p>Below is an example of using the height matching functionality</p>
+
+				<div class="example-container">
+					<span class="example-header">Example:</span>
+					<div class="example">
+						<div class="jb-grid">
+							<div class="jb-content">
+								<div class="row fill-height">
+									<div class="column xs-4"><p>This is a short column</p></div>
+									<div class="column xs-4"><p>This is a taller column.</p><p>The other columns will be matched to the height of this one.</p></div>
+									<div class="column xs-4"><p>This is a short column</p></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="example-code">
+						<span class="code-header">Code:</span>
+						<pre><code class="language-markup"><script type="prism-html-markup"><div class="jb-grid">
+	<div class="jb-content">
+		<div class="row fill-height">
+			<div class="column xs-4"><p>This is a short column</p></div>
+			<div class="column xs-4"><p>This is a taller column.</p><p>The other columns will be matched to the height of this one.</p></div>
+			<div class="column xs-4"><p>This is a short column</p></div>
+		</div>
+	</div>
+</div></script></code></pre>
+					</div>
+				</div>
+				<p>As you can see, all of the above columns have the same height. Their height is matched to the tallest column, which in this case is the middle element.</p>
+
+				<h2 class="subheading">Setting Aspect Ratios</h2>
+
+				<p>One nifty feature that exists in JBGrid is the ability to define aspect ratios for grid elements. This is done by using <code>data-</code> attributes. The following data-attributes will set aspect an aspect ratio when they are defined for an element.</p>
+
+				<ul>
+					<li><span class="ar-label">&quot;<code>data-aspectratio</code>&quot;:</span><span class="size-description">Defines an aspect ratio for all viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-aspectratio-xs</code>&quot;:</span><span class="size-description">Defines an aspect ratio for Extra Small viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-aspectratio-s</code>&quot;:</span><span class="size-description">Defines an aspect ratio for Small viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-aspectratio-m</code>&quot;:</span><span class="size-description">Defines an aspect ratio for Medium viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-aspectratio-l</code>&quot;:</span><span class="size-description">Defines an aspect ratio for Large viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-aspectratio-xl</code>&quot;:</span><span class="size-description">Defines an aspect ratio for Extra Large viewport sizes.</span></li>
+				</ul>
+
+				<p>As you can see, aspect ratios can be defined per viewport size. So components can have different aspect ratios on different screen sizes. The value for each of these attributes is an aspect ratio in the format <code>{width}x{height}</code>. For example, <code>16x9</code>, <code>4x3</code>, and <code>2x1</code> are all valid aspect ratios. The width and height components must be integers. There is also a shorthand value <code>square</code> for creating square components.</p>
+
+				<p>The following are some sample layouts that can be created using aspect ratios and standard grid components.</p>
+
+				<div class="example-container">
+					<span class="example-header">Example:</span>
+					<div class="example">
+						<div class="jb-grid">
+							<div class="jb-content">
+								<div class="row">
+									<div class="column xs-6" data-aspectratio="square">One</div>
+									<div class="column xs-6" data-aspectratio="2x1">Two</div>
+									<div class="column xs-6" data-aspectratio="2x1">Three</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="example-code">
+						<span class="code-header">Code:</span>
+						<pre><code class="language-markup"><script type="prism-html-markup"><div class="jb-grid">
+	<div class="jb-content">
+		<div class="row">
+			<div class="column xs-6" data-aspectratio="square">One</div>
+			<div class="column xs-6" data-aspectratio="2x1">Two</div>
+			<div class="column xs-6" data-aspectratio="2x1">Three</div>
+		</div>
+	</div>
+</div></script></code></pre>
+					</div>
+				</div>
+				<div class="example-container">
+					<span class="example-header">Example:</span>
+					<div class="example">
+						<div class="jb-grid">
+							<div class="jb-content">
+								<div class="row">
+									<div class="column xs-6" data-aspectratio="square">One</div>
+									<div class="column xs-6" data-aspectratio="2x1">Two</div>
+									<div class="column xs-3" data-aspectratio="square">Three</div>
+									<div class="column xs-3" data-aspectratio="square">Four</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="example-code">
+						<span class="code-header">Code:</span>
+						<pre><code class="language-markup"><script type="prism-html-markup"><div class="jb-grid">
+	<div class="jb-content">
+		<div class="row">
+			<div class="column xs-6" data-aspectratio="square">One</div>
+			<div class="column xs-6" data-aspectratio="2x1">Two</div>
+			<div class="column xs-3" data-aspectratio="square">Three</div>
+			<div class="column xs-3" data-aspectratio="square">Four</div>
+		</div>
+	</div>
+</div></script></code></pre>
+					</div>
+				</div>
+				<h2 class="subheading">Using &quot;Sticky&quot; Positioning</h2>
+
+				<p>As you can see (if you are on a large enough screen), the link menu to the left remains fixed after scrolling past a certain point. This is called &quot;sticky&quot; positioning. There is preliminary support in some browsers for doing this in pure CSS, but browser support isn't quite there yet. In addition, if you want to change the position of an elment to fixed, it removes that element from the grid context and content is unpredictably shifted around. The sticky positioning available in JBGrid, preserves the grid context, so you do not have to worry about your layouts changing when the position is shifted.</p>
+
+				<p>This &quot;sticky&quot; positioning can be accomplished by adding one of the <code>sticky</code> classes to a grid element. The classes available are as follows.</p>token
+
+				<ul>
+					<li><span class="fh-label">&quot;<code>sticky</code>&quot;:</span><span class="size-description">Provide sticky positioning across all viewport sizes.</span></li>
+					<li><span class="fh-label">&quot;<code>sticky-xs</code>&quot;:</span><span class="size-description">Provide sticky positioning on Extra Small viewport and larger.</span></li>
+					<li><span class="fh-label">&quot;<code>sticky-s</code>&quot;:</span><span class="size-description">Provide sticky positioning on Small viewport and larger.</span></li>
+					<li><span class="fh-label">&quot;<code>sticky-m</code>&quot;:</span><span class="size-description">Provide sticky positioning on Medium viewport and larger.</span></li>
+					<li><span class="fh-label">&quot;<code>sticky-l</code>&quot;:</span><span class="size-description">Provide sticky positioning on Large viewport and larger.</span></li>
+					<li><span class="fh-label">&quot;<code>sticky-xl</code>&quot;:</span><span class="size-description">Provide sticky positioning on Extra Large viewport and larger.</span></li>
+				</ul>
+
+				<p> In addition, the point at which the element becomes sticky can be adjusted using data-attributes. The default point is when the elment reaches the top of the viewport. By givng an integer value to one of the <code>data-sticky-top</code> attributes for an element, it will adjust the point at which the element becomes sticky. The value is the number of pixels from the top of the screen. The data attributes you can use are as follows.</p>
+
+				<ul>
+					<li><span class="ar-label">&quot;<code>data-sticky-top</code>&quot;:</span><span class="size-description">Defines stick point for all viewports.</span></li>
+					<li><span class="ar-label">&quot;<code>data-sticky-top-xs</code>&quot;:</span><span class="size-description">Defines stick point for Extra Small viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-sticky-top-s</code>&quot;:</span><span class="size-description">Defines stick point for Small viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-sticky-top-m</code>&quot;:</span><span class="size-description">Defines stick point for Medium viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-sticky-top-l</code>&quot;:</span><span class="size-description">Defines stick point for Large viewport sizes.</span></li>
+					<li><span class="ar-label">&quot;<code>data-sticky-top-xl</code>&quot;:</span><span class="size-description">Defines stick point for Extra Large viewport sizes.</span></li>
+				</ul>
+
+				<p>The code for the sticky sidebar on this page is as follows:</p>
+
+				<div class="example-container">
+					<div class="example-code">
+						<span class="code-header">Code:</span>
+						<pre><code class="language-markup"><script type="prism-html-markup"><div class="sidebar column xs-12 m-4 padding-xl sticky-m" data-sticky-top="20">
+	<ul class="link-list">
+		<li class="item">
+			<a href="#introduction">Introduction</a>
+		</li>
+		<li class="item">
+			<a href="#basics">Grid Basics</a>
+		</li>
+		<li class="item">
+			<a href="#responsive">Responsive Design</a>
+		</li>
+		<li class="item">
+			<a href="#fancy">Fancy Stuff</a>
+		</li>
+		<li class="item">
+			<a href="#conclusion">Conclusion</a>
+		</li>
+	</ul>
+</div></script></code></pre>
+					</div>
+				</div>
+
+				<p>As you can see, for viewport sizes of medium and above, the menu will have a sticky position once it has been scrolled to the top. In addition, there is an offset of 20 pixels added by the <code>data-sticky-top</code> attribute which prevents the menu from being fixed right across the top of the viewport.</p>
+			</section>
+			<section id="conclusion">
+				<h1 class="section-title">Conclusion</h1>
+
+				<p>It is hoped that this overview of the features and capabilities of the JBGrid system has proved to be helpful. I hope you enjoy using it, and if you have any ideas for new features (or if you find any bugs), please contact me.</p>
+			</section>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="jb-content">
+		<div class="row">
+			<div class="designed-by column xs-12 m-6 padding-xl align-left">
+				<img src="img/jacob.jpeg" class="jacob-photo">
+				<span class="designed">Designed with care by Jacob Beltran.</span>
+				<a class="jacob-link" href="http://jacobbeltran.com">http://jacobbeltran.com</a>
+			</div>
+			<div class="license column xs-12 m-6">
+				<p>JBGrid is released under an <a href="http://opensource.org/licenses/MIT">MIT License</a>. Feel free to use freely in any personal or commerical project.</p>
+			</div>
+		</div>
+	</div>
+	<div class="copyright">
+		<p>&copy; 2015 Jacob Beltran</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/prism.js" data-default-language="markup"></script>
+<script type="text/javascript" src="js/jbgrid.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+@mixin media-max-width($width) {
+	$sizes: false !default;
+	$sizeMatch: false;
+	@if $sizes != false {
+		@each $size in $sizes {
+			$i: index($sizes, $size);
+
+			@if $width == $size {
+				$sizeMatch: true;
+				$media: nth($sizesMax, $i);
+				@media only screen and (max-width: $media) { @content; }
+			}
+		}
+	}
+	@if $sizeMatch == false {
+		@media only screen and (max-width: $width) { @content; }
+	}
+}

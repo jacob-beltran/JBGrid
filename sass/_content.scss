@@ -1,0 +1,98 @@
+.main-content .section-title {
+	color: #61b4dc;
+}
+
+.main-content .subheading {
+	color: #888;
+	font-size: 1.15em;
+}
+
+.main-content section p {
+	line-height: 1.5em;
+}
+
+.main-content ul {
+
+}
+
+.main-content li {
+	padding: 4px;
+}
+
+.main-content .size-label {
+	display: inline-block;
+	vertical-align: top;
+	width: 6em;
+}
+.main-content .fh-label {
+	display: inline-block;
+	vertical-align: top;
+	width: 10em;
+}
+.main-content .ar-label {
+	display: inline-block;
+	vertical-align: top;
+	width: 13em;
+}
+
+.main-content .size-class-label {
+	display: inline-block;
+	vertical-align: top;
+	width: 3em;
+}
+
+.main-content .size-description {
+	display: inline-block;
+	vertical-align: top;
+	min-width: 9em;
+	font-style: italic;
+}
+
+.main-content .example-container {
+	padding: 15px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border: 1px solid #eee;
+	border-radius: 6px;
+}
+
+.main-content .example {
+	background-color: #e7eff9;
+	border: 1px solid rgba(0,0,0,0.2);
+	padding: 10px;
+	border-radius: 2px;
+	margin-bottom: 1em;
+}
+
+.main-content .example .column {
+	border: 2px solid #e7eff9;
+	border-radius: 5px;
+	background-color: rgba(0,0,0,0.3);
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+	font-size: .9em;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	box-shadow: inset 0 0 0 1px rgba(0,0,0,0.17);
+}
+
+.main-content .example-header,
+.main-content .code-header {
+	display: block;
+	margin-bottom: 0.2em;
+	font-size: .75em;
+	color: #7d96b2;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.main-content pre {
+	max-height: 400px;
+	overflow: auto;
+	font-size: 0.8em !important;
+	margin-top: 0;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 2px;
+	box-shadow: inset 0 5px 5px -5px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,183 @@
+@import "sizes";
+@import "media/queries";
+
+.jb-grid {
+	box-sizing: border-box;
+}
+.jb-grid * {
+	box-sizing: inherit;
+}
+
+.jb-grid {
+	width: 100%;
+	text-align: center;
+}
+
+.jb-grid .align-left {
+	text-align: left !important;
+}
+.jb-grid .align-right {
+	text-align: right !important;
+}
+.jb-grid .align-center {
+	text-align: center !important;
+}
+.jb-grid .align-justify {
+	text-align: justify !important;
+}
+
+.jb-grid .jb-content {
+	margin: 0 auto;
+}
+
+.jb-grid.width-xs .jb-content {
+	max-width: $xSmallMax;
+}
+.jb-grid.width-s .jb-content {
+	max-width: $smallMax;
+}
+.jb-grid.width-m .jb-content {
+	max-width: $mediumMax;
+}
+.jb-grid.width-l .jb-content {
+	max-width: $largeMax;
+}
+.jb-grid.width-xl .jb-content {
+	max-width: $xLargeMax;
+}
+
+.jb-grid .row {
+	width: 100%;
+	text-align: center;
+	min-width: 0% !important;
+}
+
+.jb-grid .row::after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+@each $class in $sizes {
+	.jb-grid .column[class*='#{$class}-'] {
+		display: block;
+		position: relative;
+		float: left;
+		text-align: left;
+
+		&.rtl {
+			float: right;
+		}
+		&.ltr {
+			float: left;
+		}
+		&.center {
+			float: none;
+			margin: 0 auto;
+		}
+
+	}
+}
+
+.jb-grid .all-show {
+	display: block !important;
+}
+.jb-grid .all-hide {
+	display: none !important;
+}
+.jb-grid .no-overflow {
+	overflow: hidden;
+}
+.jb-grid .scroll-overflow {
+	overflow: auto;
+}
+.jb-grid .show-overflow {
+	overflow: visible;
+}
+.jb-grid .column.fill-height {
+	height: 100%;
+}
+.jb-grid .column.auto-height {
+	height: auto !important;
+}
+
+@each $class in $sizes {
+	@include media-min-width(#{$class}) {
+		@each $class2 in $sizes {
+			.jb-grid .show-#{$class2} {
+				display: none;
+			}
+			.jb-grid .hide-#{$class2} {
+				display: block;
+			}
+		}
+		.jb-grid .show-#{$class} {
+			display: block;
+		}
+		.jb-grid .hide-#{$class} {
+			display: none;
+		}
+		.jb-grid .no-overflow-#{$class} {
+			overflow: hidden;
+		}
+		.jb-grid .scroll-overflow-#{$class} {
+			overflow: auto;
+		}
+		.jb-grid .show-overflow-#{$class} {
+			overflow: visible;
+		}
+		.jb-grid .column.fill-height-#{$class} {
+			height: 100%;
+		}
+		.jb-grid .column.auto-height-#{$class} {
+			height: auto !important;
+		}
+	}
+}
+
+$listSpaceXS: ( 2px, 3px, 4px, 5px, 6px );
+$listSpaceS: ( 4px, 5px, 6px, 7px, 8px );
+$listSpaceM: ( 6px, 7px, 8px, 9px, 10px );
+$listSpaceL: ( 8px, 9px, 10px, 11px, 12px );
+$listSpaceXL: ( 10px, 11px, 12px, 13px, 14px );
+$widths: ( 8.333%, 16.666%, 25%, 33.333%, 41.666%, 50%, 58.333%, 66.666%, 75%, 83.333%, 91.666%, 100% );
+
+@each $class in $sizes {
+	$i: index($sizes, $class);
+	$spaceXS: nth($listSpaceXS, $i);
+	$spaceS: nth($listSpaceS, $i);
+	$spaceM: nth($listSpaceM, $i);
+	$spaceL: nth($listSpaceL, $i);
+	$spaceXL: nth($listSpaceXL, $i);
+
+	@include media-min-width(#{$class}) {
+		@for $j from 1 through 12 {
+
+			.jb-grid .padding-xs {
+				padding: #{$spaceXS};
+			}
+			.jb-grid .padding-s {
+				padding: #{$spaceS};
+			}
+			.jb-grid .padding-m {
+				padding: #{$spaceM};
+			}
+			.jb-grid .padding-l {
+				padding: #{$spaceL};
+			}
+			.jb-grid .padding-xl {
+				padding: #{$spaceXL};
+			}
+
+			$width: nth($widths, $j);
+
+			.jb-grid .#{$class}-#{$j} {
+				width: #{$width};
+			}
+		}
+	}
+}
+

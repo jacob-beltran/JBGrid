@@ -1,0 +1,36 @@
+
+$mainBg: #fff;
+$mainFg: #777;
+
+*, *:before, *:after {
+	box-sizing: inherit;
+	-webkit-font-smoothing: antialiased;
+}
+
+html {
+	background-color: $mainBg;
+	color: $mainFg;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 400;
+	font-weight: 300;
+	box-sizing: border-box;
+	font-size: 16px;
+	@include media-min-width('s') {
+		font-size: 17px;
+	}
+	@include media-min-width('m') {
+		font-size: 18px;
+	}
+	@include media-min-width('l') {
+		font-size: 19px;
+	}
+	@include media-min-width('xl') {
+		font-size: 20px;
+	}
+}
+
+.page-title {
+	font-size: 2.5em;
+	font-weight: 400;
+	font-weight: 100;
+}

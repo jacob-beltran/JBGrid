@@ -1,0 +1,15 @@
+$xSmallMin: 0;
+$smallMin: 20em;
+$mediumMin: 35em;
+$largeMin: 60em;
+$xLargeMin: 80em;
+
+$xSmallMax: 20em;
+$smallMax: 35em;
+$mediumMax: 60em;
+$largeMax: 80em;
+$xLargeMax: 10000em;
+
+$sizes: ( "xs", "s", "m", "l", "xl" );
+$sizesMin: ( $xSmallMin, $smallMin, $mediumMin, $largeMin, $xLargeMin );
+$sizesMax: ( $xSmallMax, $smallMax, $mediumMax, $largeMax, $xLargeMax );
